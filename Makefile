@@ -12,6 +12,10 @@ LUCI_DEPENDS:=+luabitop
 LUCI_PKGARCH:=all
 PKG_LICENSE:=MIT
 
+define Package/luci-app-nt-netports/conffiles
+/etc/config/luci_netports
+endef
+
 #include ../../luci.mk
 include $(TOPDIR)/feeds/luci/luci.mk
 
