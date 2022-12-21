@@ -25,12 +25,15 @@ return view.extend({
 		s.anonymous = true;
 
 		o = s.option(form.Flag, 'default_additional_info', _('Display additional information in horizontal view mode by default'));
+		o.default = o.disabled;
 		o.rmempty = false;
 
 		o = s.option(form.Flag, 'default_h_mode', _('Use horizontal view mode by default'));
+		o.default = o.enabled;
 		o.rmempty = false;
 
 		o = s.option(form.Flag, 'hv_mode_switch_button', _('Show button for manual switching between horizontal/vertical view modes'));
+		o.default = o.enabled;
 		o.rmempty = false;
 
 		s = m.section(form.GridSection, 'port', _('Port List'));
