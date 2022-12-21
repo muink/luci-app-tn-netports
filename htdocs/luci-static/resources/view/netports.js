@@ -70,7 +70,7 @@ return view.extend({
 		o.default = 'auto';
 		o.rmempty = true;
 
-		o = s.option(form.Flag, 'disable', _('Disable'));
+		o = s.option(form.Flag, 'disable', _('Hidden'));
 		o.default = o.disabled;
 		o.editable = true;
 		o.rmempty = true;

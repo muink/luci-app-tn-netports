@@ -6,7 +6,7 @@ msgstr "Content-Type: text/plain; charset=UTF-8"
 msgid "%1024.2mB"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:52
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:55
 msgid "Auto detect"
 msgstr ""
 
@@ -21,10 +21,6 @@ msgstr ""
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:124
 msgctxt "Link status"
 msgid "Connected"
-msgstr ""
-
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:70
-msgid "Disable"
 msgstr ""
 
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:140
@@ -45,7 +41,7 @@ msgstr ""
 msgid "Firewall zones"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:63
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:66
 msgid "GPRS"
 msgstr ""
 
@@ -53,7 +49,11 @@ msgstr ""
 msgid "Grant access to network ports status information"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:55
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:73
+msgid "Hidden"
+msgstr ""
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:58
 msgid "Intercircuit fixed link"
 msgstr ""
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Network Interfaces Ports Status"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:48
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:51
 msgid "Nick name"
 msgstr ""
 
@@ -94,19 +94,19 @@ msgstr ""
 msgid "No data to display"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:66
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:69
 msgid "PPP"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:36
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:39
 msgid "Port List"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:51
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:54
 msgid "Port type"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:53
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:56
 msgid "RJ45"
 msgstr ""
 
@@ -114,11 +114,11 @@ msgstr ""
 msgid "RX"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:54
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:57
 msgid "SFP"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:33
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:35
 msgid "Show button for manual switching between horizontal/vertical view modes"
 msgstr ""
 
@@ -139,49 +139,46 @@ msgstr ""
 msgid "Too many ports for horizontal display mode"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:65
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:68
 msgid "Tunnel"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:60
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:63
 msgid "USB 2G modem"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:61
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:64
 msgid "USB 3G modem"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:62
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:65
 msgid "USB 4G modem"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:58
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:61
 msgid "USB RNDIS"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:57
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:60
 msgid "USB Wireless"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:59
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:62
 msgid "USB modem"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:30
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:31
 msgid "Use horizontal view mode by default"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:64
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:67
 msgid "VPN"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:56
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:59
 msgid "Wireless"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:53
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:54
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:55
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:56
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:57
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:58
@@ -193,6 +190,9 @@ msgstr ""
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:64
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:65
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:66
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:67
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:68
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:69
 msgid "connection"
 msgstr ""
 
@@ -204,7 +204,7 @@ msgstr ""
 msgid "half-duplex"
 msgstr ""
 
-#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:41
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:44
 msgid "interface"
 msgstr ""
 
