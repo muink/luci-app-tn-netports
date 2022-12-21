@@ -17,6 +17,10 @@ msgstr ""
 msgid "%1024.2mB"
 msgstr ""
 
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:52
+msgid "Auto detect"
+msgstr "自动检测"
+
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:252
 msgid "Bridge member"
 msgstr "网桥成员"
@@ -30,6 +34,10 @@ msgctxt "Link status"
 msgid "Connected"
 msgstr "已连接"
 
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:70
+msgid "Disable"
+msgstr "禁用"
+
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:140
 msgctxt "Link status"
 msgid "Disabled"
@@ -40,17 +48,33 @@ msgctxt "Link status"
 msgid "Disconnected"
 msgstr "已断开"
 
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:27
+msgid "Display additional information in horizontal view mode by default"
+msgstr "默认在水平显示模式显示附加信息"
+
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:253
 msgid "Firewall zones"
 msgstr "防火墙区域"
 
-#: applications/luci-app-tn-netports/root/usr/share/rpcd/acl.d/netports.json:3
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:63
+msgid "GPRS"
+msgstr ""
+
+#: applications/luci-app-tn-netports/root/usr/share/rpcd/acl.d/luci-app-tn-netports.json:3
 msgid "Grant access to network ports status information"
 msgstr "授予访问 LuCI 应用 netports 的权限"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:55
+msgid "Intercircuit fixed link"
+msgstr "电路间固定连接"
 
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:251
 msgid "Interface"
 msgstr "接口"
+
+#: applications/luci-app-tn-netports/root/usr/share/luci/menu.d/luci-app-tn-netports.json:3
+msgid "Interfaces Status"
+msgstr "接口状态"
 
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:250
 msgid "Link status"
@@ -68,17 +92,46 @@ msgstr ""
 msgid "Name and MAC-address"
 msgstr "设备名 & MAC-地址"
 
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:22
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/status/include/25_netports.js:55
 msgid "Network Interfaces Ports Status"
 msgstr "网络接口状态"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:48
+msgid "Nick name"
+msgstr "昵称"
 
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:589
 msgid "No data to display"
 msgstr "无可用数据"
 
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:66
+msgid "PPP"
+msgstr ""
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:36
+msgid "Port List"
+msgstr "接口列表"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:51
+msgid "Port type"
+msgstr "接口类型"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:53
+msgid "RJ45"
+msgstr ""
+
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:254
 msgid "RX"
 msgstr ""
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:54
+msgid "SFP"
+msgstr ""
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:33
+msgid "Show button for manual switching between horizontal/vertical view modes"
+msgstr "显示手动切换显示模式按钮"
 
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:255
 msgid "TX"
@@ -97,6 +150,63 @@ msgstr "切换显示模式"
 msgid "Too many ports for horizontal display mode"
 msgstr "水平显示模式端口过多"
 
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:65
+msgid "Tunnel"
+msgstr "隧道"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:60
+msgid "USB 2G modem"
+msgstr "USB 2G 调制解调器"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:61
+msgid "USB 3G modem"
+msgstr "USB 3G 调制解调器"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:62
+msgid "USB 4G modem"
+msgstr "USB 4G 调制解调器"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:58
+msgid "USB RNDIS"
+msgstr ""
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:57
+msgid "USB Wireless"
+msgstr "USB 无线网络"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:59
+msgid "USB modem"
+msgstr "USB 调制解调器"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:30
+msgid "Use horizontal view mode by default"
+msgstr "默认使用水平显示模式"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:64
+msgid "VPN"
+msgstr ""
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:56
+msgid "Wireless"
+msgstr "无线网络"
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:53
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:54
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:55
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:56
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:57
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:58
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:59
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:60
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:61
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:62
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:63
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:64
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:65
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:66
+msgid "connection"
+msgstr "连接"
+
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:127
 msgid "full-duplex"
 msgstr ""
@@ -104,6 +214,10 @@ msgstr ""
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:129
 msgid "half-duplex"
 msgstr ""
+
+#: applications/luci-app-tn-netports/htdocs/luci-static/resources/view/netports.js:41
+msgid "interface"
+msgstr "接口"
 
 #: applications/luci-app-tn-netports/htdocs/luci-static/resources/netports.js:214
 msgid "none"
