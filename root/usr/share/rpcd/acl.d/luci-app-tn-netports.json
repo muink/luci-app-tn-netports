@@ -6,6 +6,9 @@
 				"netports": [ "getPortsInfo" ]
 			},
 			"uci": [ "luci_netports" ]
+		},
+		"write": {
+			"uci": [ "luci_netports" ]
 		}
 	}
 }
