@@ -22,18 +22,18 @@ This file contain one `global` section with global application settings and one 
 The `global` section contains global application settings. Default `global` section configuration:
 ```
 config global 'global'
-	option default_additional_info 'false'
-	option default_h_mode          'false'
-	option hv_mode_switch_button   'false'
+	option default_additional_info '0'
+	option default_h_mode          '1'
+	option hv_mode_switch_button   '1'
 ```
 
 These options can be set in the `global` section:
 
 | Name                      | Type    | Required | Default | Description                                                                  |
 | ------------------------- | ------- | -------- | ------- | ---------------------------------------------------------------------------- |
-| `default_additional_info` | boolean | no       | false   | Display additional information in horizontal view mode by default.           |
-| `default_h_mode`          | boolean | no       | false   | Use horizontal view mode by default.                                         |
-| `hv_mode_switch_button`   | boolean | no       | false   | Show button for manual switching between horizontal and vertical view modes. |
+| `default_additional_info` | int     | no       | 0       | Display additional information in horizontal view mode by default.           |
+| `default_h_mode`          | int     | no       | 1       | Use horizontal view mode by default.                                         |
+| `hv_mode_switch_button`   | int     | no       | 1       | Show button for manual switching between horizontal and vertical view modes. |
 
 Horizontal display mode can be used maximum for 6 interfaces. If there are more interfaces, the vertical display mode will be automatically activated without the possibility of switching to the horizontal mode.
 
