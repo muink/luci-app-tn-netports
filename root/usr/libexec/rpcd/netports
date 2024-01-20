@@ -9,6 +9,11 @@ local fs   = require "nixio.fs"
 
 local sysfs_net_root = "/sys/class/net"
 
+local function syslog(msg)
+	local nixio = require "nixio", require "nixio.util"	
+	nixio.syslog("info", "NP: " .. tostring(msg))
+end
+
 local function sysfs_net_read(ifname, file)
 	local v = nil
 	if fs.access(sysfs_net_root .. "/%s/%s" % {ifname, file}) then
@@ -81,7 +86,64 @@ local function table_copy(t)
 	return setmetatable(u, getmetatable(t))
 end
 
+local function cfg_auto_gen()
+	local uci = require("luci.model.uci").cursor()
+	local cfg = "luci_netports"
+	local dev = uci:get_first(cfg, "port", "ifname")
+	if dev ~= nil then
+		--syslog("cfg_auto_gen port list already exist")
+		return
+	end
+	syslog("cfg_auto_gen ...")
+	local board_txt = fs.readfile("/etc/board.json") or ""
+	if board_txt == "" then
+		return
+	end
+	local json = require "luci.jsonc"
+	local board = json.parse(board_txt)
+ 	if type(board) ~= "table" then 
+		return
+	end
+	--local model_id = board.model.id
+	if board.network == nil then
+		return
+	end
+	local port_count = 0
+	if board.network.wan ~= nil then
+		if board.network.wan.device ~= nil then
+			local wan_dev = board.network.wan.device
+			local port = uci:add(cfg, "port")
+			uci:set(cfg, port, "ifname", wan_dev)
+			uci:set(cfg, port, "name", "WAN")
+			uci:save(cfg)
+			port_count = port_count + 1
+		end
+	end
+	if board.network.lan ~= nil then
+		if board.network.lan.ports ~= nil then
+			for _, lan in pairs(board.network.lan.ports) do
+				local port = uci:add("luci_netports", "port")
+				uci:set(cfg, port, "ifname", lan)
+				uci:set(cfg, port, "name", lan:upper())
+				uci:save(cfg)
+				port_count = port_count + 1
+			end
+		end
+	end
+	if port_count > 0 then
+		uci:commit(cfg)
+		syslog("cfg_auto_gen: added " .. port_count .. " ports")
+	end
+end
+
 local methods = {
+	cfgAutoGen = {
+		call = function(args)
+			cfg_auto_gen()
+			return { }
+		end
+	},
+	
 	getPortsInfo = {
 		call = function(args)
 			local util = require("luci.util")
@@ -128,6 +190,8 @@ local methods = {
 					end
 				end
 			end
+
+			cfg_auto_gen()
 
 			uci:foreach("luci_netports", "port",
 				function(section)
@@ -300,6 +364,7 @@ if arg[1] == "list" then
 elseif arg[1] == "call" then
 	local args = parseInput()
 	local method = validateArgs(arg[2], args)
+	--syslog(string.format("call:: %s", tostring(arg[2])))
 	local ok, result = pcall(method.call, args)
 	if not ok then
 		syslog(tostring(result))
