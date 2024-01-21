@@ -20,11 +20,10 @@ endef
 
 define Package/$(LUCI_NAME)/postinst
 #!/bin/sh
-if [ -n "$${IPKG_INSTROOT}" ]; then
-	if [ ! -f "$${IPKG_INSTROOT}/etc/config/luci_netports" ]; then
-		echo "config global 'global'" > "$${IPKG_INSTROOT}/etc/config/luci_netports"
-	fi
-else
+if [ ! -f "$${IPKG_INSTROOT}/etc/config/luci_netports" ]; then
+	echo "config global 'global'" > "$${IPKG_INSTROOT}/etc/config/luci_netports"
+fi
+if [ -z "$${IPKG_INSTROOT}" ]; then
 	/etc/init.d/rpcd restart
 fi
 endef
