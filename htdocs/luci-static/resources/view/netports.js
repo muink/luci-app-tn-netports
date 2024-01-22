@@ -1,18 +1,23 @@
 'use strict';
+'require rpc';
 'require view';
 'require uci';
 'require form';
 'require tools.widgets as widgets';
 
+var callCfgAutoGen = rpc.declare({
+	object: 'netports',
+	method: 'cfgAutoGen',
+	expect: { }
+});
+
 return view.extend({
-//	handleSaveApply: null,
-//	handleSave: null,
-//	handleReset: null,
 
 	load: function() {
-	return Promise.all([
-		uci.load('luci_netports'),
-	]);
+		return Promise.all([
+			callCfgAutoGen(),
+			uci.load('luci_netports'),
+		]);	
 	},
 
 	render: function(data) {
