@@ -15,8 +15,7 @@ return view.extend({
 
 	load: function() {
 		return Promise.all([
-			callCfgAutoGen(),
-			uci.load('luci_netports'),
+			uci.load('luci_netports')
 		]);	
 	},
 
@@ -28,6 +27,13 @@ return view.extend({
 
 		s = m.section(form.NamedSection, 'global', 'global');
 		s.anonymous = true;
+
+		o = s.option(form.Button, '_detect', _('Generate Config'));
+		o.inputstyle = 'reload';
+		o.onclick = function() {
+			callCfgAutoGen();
+			return location.reload();
+		};
 
 		o = s.option(form.Flag, 'default_additional_info', _('Display additional information in horizontal view mode by default'));
 		o.default = o.disabled;
