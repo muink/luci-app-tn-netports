@@ -32,13 +32,13 @@ return L.Class.extend({
 
 		uci.load('luci_netports').then(function() {
 			var np_default_additional_info =
-				parseInt(uci.get('luci_netports', 'global', 'default_additional_info')) == 1;
+				parseInt(uci.get('luci_netports', 'global', 'default_additional_info') || 0) == 1;
 
 			var np_default_h_mode =
-				parseInt(uci.get('luci_netports', 'global', 'default_h_mode')) == 1;
+				parseInt(uci.get('luci_netports', 'global', 'default_h_mode') || 1) == 1;
 
 			var np_hv_mode_switch_button =
-				parseInt(uci.get('luci_netports', 'global', 'hv_mode_switch_button')) == 1;
+				parseInt(uci.get('luci_netports', 'global', 'hv_mode_switch_button') || 1) == 1;
 
 			netports_object = new netports.NetPorts({
 				target: netports_el,

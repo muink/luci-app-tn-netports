@@ -358,12 +358,12 @@ var NetPorts = L.Class.extend({
 				E('div', { class: 'netports-buttons' }, buttons)
 			]);
 
-			var table = E('div', { class: 'table netports-table' }, [
-				E('div', { class: 'tr table-titles' },
-					E('div', { class: 'th top center' }, '...')
+			var table = E('table', { class: 'table netports-table' }, [
+				E('tr', { class: 'tr table-titles' },
+					E('th', { class: 'th top center' }, '...')
 				),
-				E('div', { class: 'tr placeholder' },
-					E('div', { class: 'td' },
+				E('tr', { class: 'tr placeholder' },
+					E('td', { class: 'td' },
 						E('em', { class: 'spinning' }, _('Collecting data...'))
 					)
 				)
@@ -449,13 +449,13 @@ var NetPorts = L.Class.extend({
 					if (t.vModeDisable)
 						return;
 
-					titles.push(E('div', {
+					titles.push(E('th', {
 						class: 'th ' + config.tblCellClasses,
 						style: (t.vModeMinWidth ? 'min-width: ' + t.vModeMinWidth + ';' : '')
 					}, t.title))
 				});
 
-				tableElement.appendChild(E('div', { class: 'tr table-titles' }, titles));
+				tableElement.appendChild(E('tr', { class: 'tr table-titles' }, titles));
 			}
 			else {
 				/* Horizontal mode */
@@ -463,11 +463,11 @@ var NetPorts = L.Class.extend({
 				var len = data.length;
 
 				if (len == 0) {
-					row.push(E('div', { class: 'th top center' }, '...'));
+					row.push(E('th', { class: 'th top center' }, '...'));
 				}
 				else {
 					/* First column */
-					row.push(E('div', {
+					row.push(E('th', {
 						class: 'th ' + config.tblCellClasses,
 						style: 'width: ' + config.hModeFirstColWidth + '%;'
 					}));
@@ -476,7 +476,7 @@ var NetPorts = L.Class.extend({
 					var col_width = (100 - config.hModeFirstColWidth) / len;
 
 					for (let p = 0; p < len; p++) {
-						row.push(E('div', {
+						row.push(E('th', {
 							class: 'th ' + config.tblCellClasses,
 							style: 'width: ' + col_width + '%;'
 						}, data[p].name));
@@ -484,7 +484,7 @@ var NetPorts = L.Class.extend({
 				}
 
 				var thead = tableElement.querySelectorAll('.tr.table-titles');
-				var trow = E('div', { class: 'tr table-titles' }, row);
+				var trow = E('tr', { class: 'tr table-titles' }, row);
 
 				if (thead.length) {
 					if (trow.innerHTML !== thead.innerHTML)
@@ -511,11 +511,11 @@ var NetPorts = L.Class.extend({
 						if (t.vModeDisable)
 							return;
 
-						tcells.push(E('div', {
+						tcells.push(E('td', {
 							'class': 'td ' + config.tblCellClasses }, t.fmtFunc(port)));
 					});
 
-					var trow = E('div', { 'class': 'tr' }, tcells);
+					var trow = E('tr', { 'class': 'tr' }, tcells);
 					trow.classList.add('cbi-rowstyle-%d'.format((n++ % 2) ? 2 : 1));
 
 					if (rows[n]) {
@@ -543,12 +543,12 @@ var NetPorts = L.Class.extend({
 
 						var tcells = []
 
-						tcells.push(E('div', { 'class': 'td ' + config.tblCellClasses }, t.title))
+						tcells.push(E('td', { 'class': 'td ' + config.tblCellClasses }, t.title))
 						data.forEach(function(port) {
-							tcells.push(E('div', { 'class': 'td ' + config.tblCellClasses }, t.fmtFunc(port)));
+							tcells.push(E('td', { 'class': 'td ' + config.tblCellClasses }, t.fmtFunc(port)));
 						});
 
-						var trow = E('div', { 'class': 'tr' }, tcells);
+						var trow = E('tr', { 'class': 'tr' }, tcells);
 						trow.classList.add('cbi-rowstyle-%d'.format((n++ % 2) ? 2 : 1));
 						if (t.hModeExtra)
 						{
@@ -585,8 +585,8 @@ var NetPorts = L.Class.extend({
 				tableElement.removeChild(rows[n]);
 
 			if (tableElement.firstElementChild === tableElement.lastElementChild) {
-				var trow = tableElement.appendChild(E('div', { 'class': 'tr placeholder' }));
-				var td = trow.appendChild(E('div', { 'class': 'td top center' }, _('No data to display')));
+				var trow = tableElement.appendChild(E('tr', { 'class': 'tr placeholder' }));
+				var td = trow.appendChild(E('td', { 'class': 'td top center' }, _('No data to display')));
 			}
 		}
 

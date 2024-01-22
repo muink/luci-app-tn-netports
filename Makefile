@@ -20,8 +20,6 @@ define Package/$(LUCI_NAME)/conffiles
 endef
 
 define Package/$(LUCI_NAME)/postinst
-#!/bin/sh
-[ -f "$${IPKG_INSTROOT}/etc/config/luci_netports" ] || echo "config global 'global'" > "$${IPKG_INSTROOT}/etc/config/luci_netports"
 endef
 
 define Package/$(LUCI_NAME)/prerm
