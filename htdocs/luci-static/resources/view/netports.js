@@ -10,9 +10,9 @@ return view.extend({
 //	handleReset: null,
 
 	load: function() {
-	return Promise.all([
-		uci.load('luci_netports'),
-	]);
+		return Promise.all([
+			uci.load('luci_netports')
+		]);	
 	},
 
 	render: function(data) {

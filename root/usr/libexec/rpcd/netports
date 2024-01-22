@@ -293,12 +293,19 @@ end
 
 if arg[1] == "list" then
 	local _, method, rv = nil, nil, {}
-	for _, method in pairs(methods) do rv[_] = method.args or {} end
+	for _, method in pairs(methods) do
+		rv[_] = method.args or {}
+	end
 	print((json.stringify(rv):gsub(":%[%]", ":{}")))
 elseif arg[1] == "call" then
 	local args = parseInput()
 	local method = validateArgs(arg[2], args)
-	local result, code = method.call(args)
+	local ok, result = pcall(method.call, args)
+	if not ok then
+		syslog(tostring(result))
+		print(json.stringify( { error = tostring(result) } ))
+		os.exit(1)
+	end
 	print((json.stringify(result):gsub("^%[%]$", "{}")))
-	os.exit(code or 0)
+	os.exit(result.code or 0)
 end
