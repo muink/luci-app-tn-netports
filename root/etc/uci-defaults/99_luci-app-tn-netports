@@ -3,7 +3,7 @@
 count=$(uci -q show luci_netports | grep "luci_netports.@port\[.*\]=port" | wc -l)
 [ "$(uci -q get luci_netports.@port[0].ifname)" = "lo" ] && let count--
 if [ $count -eq 0 ]; then
-	for ifname in $(ls -l /sys/class/net/ | grep -v virtual | sed -En 's|^.+\s+([^\s]+) -> .*|\1|p'); do
+	for ifname in $(jsonfilter -q -i /etc/board.json -e '@.network[*].device'); do
 		sid=$(uci add luci_netports port)
 		uci set luci_netports.${sid}.ifname="$ifname"
 		uci commit luci_netports
